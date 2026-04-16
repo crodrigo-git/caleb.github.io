@@ -2,10 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi tienda virtual</title>
+    <title>Dulce Tentación</title>
 </head>
 <body>
-    <h1>Bienvenido a mi tienda </h1>
-    <p>Próximamente productos...</p>
+
+    <h1>Dulce Tentación 🍰</h1>
+    <p>Los mejores postres caseros</p>
+
+    <h2>Productos</h2>
+
+    <div>
+        <p>Torta de chocolate - S/35</p>
+        <button onclick="agregar('Torta de chocolate', 35)">Agregar</button>
+    </div>
+
+    <div>
+        <p>Cupcakes (6 unidades) - S/18</p>
+        <button onclick="agregar('Cupcakes', 18)">Agregar</button>
+    </div>
+
+    <div>
+        <p>Cheesecake - S/28</p>
+        <button onclick="agregar('Cheesecake', 28)">Agregar</button>
+    </div>
+
+    <h2>Carrito</h2>
+    <ul id="carrito"></ul>
+    <p>Total: S/ <span id="total">0</span></p>
+
+    <script>
+        let total = 0;
+
+        function agregar(nombre, precio) {
+            let lista = document.getElementById("carrito");
+            let item = document.createElement("li");
+            item.textContent = nombre + " - S/" + precio;
+            lista.appendChild(item);
+
+            total += precio;
+            document.getElementById("total").textContent = total;
+        }
+    </script>
+
 </body>
 </html>
